@@ -45,8 +45,7 @@ class BaseAdapter<T> : RecyclerView.Adapter<BaseAdapter.BaseViewHolder<T>>() {
     notifyDataSetChanged()
   }
 
-  fun addItem(newItem: T)
-  {
+  fun addItem(newItem: T) {
     itemList.add(newItem)
     notifyDataSetChanged()
   }

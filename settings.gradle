@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Epic Android Concepts"
-include ':app'
+include ':content-provider'
+include ':navigation-compose'
