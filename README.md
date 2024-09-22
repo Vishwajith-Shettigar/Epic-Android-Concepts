@@ -4,5 +4,8 @@ Welcome to the Epic Android Concepts Series! This series covers a wide range of 
 
 ## Table of Contents
 
-1. [Understanding ContentProvider and ContentResolver in Android with Kotlin](https://medium.com/@zekromvishwa56789/understanding-contentprovider-and-contentresolver-in-android-with-kotlin-f31952062649)
+1. [Understanding ContentProvider and ContentResolver in Android with Kotlin.](https://medium.com/@zekromvishwa56789/understanding-contentprovider-and-contentresolver-in-android-with-kotlin-f31952062649)
+2. [Navigation in Jetpack Compose.](https://medium.com/@zekromvishwa56789/navigation-in-jetpack-compose-android-7eff5770eb50)
+
+
 
