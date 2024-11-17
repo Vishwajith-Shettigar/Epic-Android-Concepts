@@ -1,17 +1,12 @@
 package com.example.pushnotification
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
 import android.util.Log
-import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.pushnotification.databinding.MainActivityBinding
-import com.google.firebase.Firebase
-import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.initialize
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,10 +24,12 @@ const val userId = "673bdkw72k"
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: MainActivityBinding
 
-  val retrofit = Retrofit.Builder()
-    .baseUrl("http://server_base_url")
-    .addConverterFactory(GsonConverterFactory.create())
-    .build()
+  val retrofit by lazy {
+    Retrofit.Builder()
+      .baseUrl("http://server_base_url")
+      .addConverterFactory(GsonConverterFactory.create())
+      .build()
+  }
 
   val notificationApi by lazy {
     retrofit.create(NotificationApi::class.java)
@@ -46,17 +43,21 @@ class MainActivity : AppCompatActivity() {
     binding.btn.setOnClickListener {
       try {
         lifecycleScope.launch {
-          withContext(Dispatchers.IO) {
-            notificationApi.sendNotification(
-              NotificationRequest(
-                listOf(userId), title = "You have got new notification",
-                body = "Epic Android Concepts Series, ep 3"
+          try {
+            withContext(Dispatchers.IO) {
+              notificationApi.sendNotification(
+                NotificationRequest(
+                  listOf(userId), title = "You have got new notification",
+                  body = "Epic Android Concepts Series, ep 3"
+                )
               )
-            )
+            }
+          }catch (e: Exception) {
+            Toast.makeText(applicationContext,e.message.toString(),Toast.LENGTH_SHORT).show()
+            Log.e("e",e.toString())
           }
         }
       } catch (e: Exception) {
-        Log.e("pokemon",e.toString())
       }
     }
 
@@ -75,10 +76,7 @@ suspend fun setFcmToken(token: String) {
       mapOf(
         "fcmToken" to token
       )
-    ).addOnSuccessListener {
-
-    }.addOnFailureListener {
-    }
+    ).await()
   } catch (e: Exception) {
   }
 }

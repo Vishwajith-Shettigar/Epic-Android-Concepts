@@ -16,21 +16,19 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
   override fun onNewToken(token: String) {
     super.onNewToken(token)
-// FCM token could change anytime, this method will be called,
-// when there is new updated token for this user, so always update user's
-// fcm token in your databse.
+    // FCM token could change anytime, this method will be called,
+    // when there is new updated token for this user, so always update user's
+    // fcm token in your databse.
     // Store fcm token in user's record, so that later
     // could be used to send notification to same user.
 
     CoroutineScope(Dispatchers.IO).launch {
       setFcmToken(token)
-
     }
-
   }
 
   override fun onMessageReceived(remoteMessage: RemoteMessage) {
-// This method will be called everytime FCM service sends message.
+    // This method will be called everytime FCM service sends message.
     super.onMessageReceived(remoteMessage)
     remoteMessage.data.let {
       Log.e("pokemon", "hello data")
