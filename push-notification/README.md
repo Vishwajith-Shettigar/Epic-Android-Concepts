@@ -9,6 +9,7 @@
 
 ## Server setup
 - Create your service account key in your project settings under service tab.
+- And paste serviceAccountKey.json in your server folder.
 - `const serviceAccount = require("./serviceAccountKey.json")`
 
 
