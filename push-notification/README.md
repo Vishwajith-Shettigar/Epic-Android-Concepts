@@ -1,11 +1,15 @@
-# Epic Android Concepts Series
+# Push notifications
 
-Welcome to the Epic Android Concepts Series! This series covers a wide range of essential Android development concepts, providing detailed explanations, examples, and practical insights.
+## Firebase Setup
+- Go to the Firebase Console.
+- Create a new project or use an existing one.
+- Add this Android app by registering  package name(com.example.pushnotification) and downloading the google-services.json file.
+- Paste  google-services.json in push-notification( push-notification/google-services.json)
+- Enable Firebase Cloud Messaging under the Firebase project settings.
 
-## Table of Contents
-
-1. [Understanding ContentProvider and ContentResolver in Android with Kotlin.](https://medium.com/@zekromvishwa56789/understanding-contentprovider-and-contentresolver-in-android-with-kotlin-f31952062649)
-2. [Navigation in Jetpack Compose.](https://medium.com/@zekromvishwa56789/navigation-in-jetpack-compose-android-7eff5770eb50)
+## Server setup
+- Create your service account key in your project settings under service tab.
+  `const serviceAccount = require("./serviceAccountKey.json")`
 
 
 
