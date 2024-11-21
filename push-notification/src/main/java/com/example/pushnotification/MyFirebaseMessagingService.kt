@@ -31,7 +31,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     // This method will be called everytime FCM service sends message.
     super.onMessageReceived(remoteMessage)
     remoteMessage.data.let {
-      Log.e("pokemon", "hello data")
       showNotification(it["title"], it["body"])
     }
   }
