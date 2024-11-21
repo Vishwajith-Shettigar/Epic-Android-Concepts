@@ -9,6 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/broadcast-event" />
+            <option value="$PROJECT_DIR$/broadcast-events" />
             <option value="$PROJECT_DIR$/content-provider" />
             <option value="$PROJECT_DIR$/navigation-compose" />
             <option value="$PROJECT_DIR$/push-notification" />

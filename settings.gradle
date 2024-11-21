@@ -16,3 +16,5 @@ rootProject.name = "Epic Android Concepts"
 include ':content-provider'
 include ':navigation-compose'
 include ':push-notification'
+include ':broadcast-events'
+include ':broadcast-event'
