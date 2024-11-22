@@ -11,6 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EpicAndroidConcepts"
         >
+        <receiver
+            android:name=".CounterBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.broadcast_event_COUNTER_EPIC" />
+            </intent-filter>
+        </receiver>
 
         <activity android:name="com.example.broadcast_event.MainActivity"
             android:exported="true">

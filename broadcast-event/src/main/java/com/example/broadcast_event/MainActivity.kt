@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     registerReceiver(airplaneModeReceiver, intentFilter)
 
     val intentFilter2 = IntentFilter(CUSTOM_BROADCAST_ACTION)
-    registerReceiver(counterBroadcastReceiver, intentFilter2, RECEIVER_EXPORTED)
+    registerReceiver(counterBroadcastReceiver, intentFilter2, RECEIVER_NOT_EXPORTED)
 
     AirplaneModeBus.airplaneModeState.observe(this) {
       if (it)
@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
       val intent = Intent(CUSTOM_BROADCAST_ACTION).apply {
         putExtra("count", count.toString())
       }
+      intent.setPackage(this.packageName)
       sendBroadcast(intent)
     }
   }
