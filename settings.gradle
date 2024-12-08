@@ -4,9 +4,12 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins {
+        id 'org.jetbrains.kotlin.jvm' version '1.9.23'
+    }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
@@ -18,3 +21,4 @@ include ':navigation-compose'
 include ':push-notification'
 include ':broadcast-events'
 include ':broadcast-event'
+include ':protobuf'
