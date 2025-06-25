@@ -9,6 +9,7 @@ Welcome to the Epic Android Concepts Series! This series covers a wide range of 
 3. [Push Notifications using Firebase Cloud Messaging in Android.](https://medium.com/@zekromvishwa56789/push-notification-using-firebase-in-android-fcb78da6a443)
 4. [Android Broadcasts: System, Custom, and Local Implementations with Examples.](https://medium.com/@zekromvishwa56789/understanding-android-broadcasts-a-practical-guide-for-developers-c05c1f431892)
 5. [Setting Up Protocol Buffers in an Android Project.](https://medium.com/@zekromvishwa56789/setting-up-protocol-buffers-in-an-android-project-8f7bad31981f)
+6. 5. [SOLID Principles in Android](https://medium.com/@zekromvishwa56789/solid-principles-in-android-32779c6707cc)
 
 
 
